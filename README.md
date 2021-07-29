@@ -2,7 +2,7 @@
 - 👀 I’m interested in Data Analysis
 - 🌱 I’m currently learning Python
 - 💞️ I’m looking to collaborate on Data Analysis
-- 📫 How to reach me via email
+- 📫 You can reach me via email: anahitlam@gmail.com
 
 <!---
 anait-lama/anait-lama is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
