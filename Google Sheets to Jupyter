@@ -1,0 +1,26 @@
+#Based on https://towardsdatascience.com/how-to-integrate-google-sheets-and-jupyter-notebooks-c469309aacea 
+#import the libraries
+import pandas as pd
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from pandas.io.json import json_normalize
+
+## Connect to the service account
+scope = ['https://spreadsheets.google.com/feeds']
+credentials = ServiceAccountCredentials.from_json_keyfile_name('/Users/anaitagadzhanyan/Desktop/Практикум/extreme-minutia-321117-677aeb6efe7b.json', scope)
+gc = gspread.authorize(credentials)
+
+##Get data sheet from Google Drive
+spreadsheet_key = '1XpY5h3gMPf8BcGoasXgAcSjY354ybhkTkxNTslCYr1o'
+book = gc.open_by_key(spreadsheet_key)
+worksheet = book.worksheet("Flagged_words")
+table = worksheet.get_all_values()
+
+##Convert table data into a dataframe
+df = pd.DataFrame(table[1:], columns=table[0])
+display(df.head())
+
+#Save changes to Google Drive
+from df2gspread import df2gspread as d2g
+wks_name = 'Jupyter Manipulated Data'
+d2g.upload(df, spreadsheet_key, wks_name, credentials=credentials, row_names=True)
