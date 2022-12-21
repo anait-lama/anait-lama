@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @anait-lama
 - 👀 I’m interested in Data Analysis
 - 🌱 I’m currently learning Python
-- 💞️ I’m looking to collaborate on Data Analysis
+- 💞️ I’m looking to collaborate as a Support Engineer
 - 📫 You can reach me via email: anahitlam@gmail.com
 
 <!---
